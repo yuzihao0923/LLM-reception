@@ -1,0 +1,267 @@
+/* 网格布局定义 */
+.item1 { grid-area: header; }
+.item2 { grid-area: toolbar; }
+.item3 { grid-area: ai_ip; }
+.item4 { grid-area: chatbox; }
+.item5 { grid-area: textbar; }
+.item6 { grid-area: clear; }
+.item7 { grid-area: empty; }
+
+body {
+    background-image: url('/resource/内部框架.png'), url('/resource/new_background.jpg');
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header header header header header'
+    'header header header header header header header header header header'
+    'toolbar ai_ip chatbox chatbox chatbox chatbox chatbox chatbox empty empty'
+    'toolbar ai_ip chatbox chatbox chatbox chatbox chatbox chatbox empty empty'
+    'toolbar ai_ip chatbox chatbox chatbox chatbox chatbox chatbox empty empty'
+    'toolbar ai_ip chatbox chatbox chatbox chatbox chatbox chatbox empty empty'
+    'toolbar ai_ip clear clear clear clear clear clear empty empty'
+    'toolbar ai_ip textbar textbar textbar textbar textbar textbar empty empty'
+    'toolbar ai_ip textbar textbar textbar textbar textbar textbar empty empty';
+  gap: 10px;
+  padding: 10px;
+}
+
+/* .grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 5px;
+} */
+
+.item1 {
+  background-image: url('/resource/顶部.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.chat-box {
+  width: 100%;
+  width: 900px; /* 适应屏幕 */
+  height: 450px; /* 高度固定 */
+  overflow-y: auto; /* 启用垂直滚动 */
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* 间隙 */
+  font-size: 5px;
+}
+
+
+/* 消息气泡 */
+.chat-message {
+    display: flex;
+    align-items: flex-start;
+    max-width: 95%; /* 设置最大宽度 */
+    padding: 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    word-wrap: break-word;
+    font-size: 5px;
+    display: inline-block;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+}
+
+/* 消息文本样式 */
+.message-text {
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+}
+
+/* 知识依据的样式 */
+.knowledge-basis {
+  margin-top: 10px; /* 知识依据和回答之间有间隔 */
+  font-size: 12px;
+  color: #555;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* 用户消息文本 */
+.user-message .message-text {
+  background: linear-gradient(to right, #1775FF, #64ADF6);
+  align-self: flex-start;
+  color: white;
+}
+
+/* 模型消息文本 */
+.model-response .message-text {
+  background-color: #f1f0f0;
+  align-self: flex-start;
+}
+
+/* 输入框样式 */
+input[type="text"] {
+    width: 70%;
+    padding: 12px;
+    font-size: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: white;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#clear {
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    
+}
+
+
+#clear:hover {
+    background-color: gray;
+}
+
+#user-input {
+    padding: 12px;
+    width: 70%;
+    margin-right: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 12px 20px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none; /* 隐藏项目符号 */
+    padding: 10;            /* 去除默认内边距 */
+    margin: 0;             /* 去除默认外边距 */
+}
+
+.item5 > div {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center;     /* 垂直居中 */
+  gap: 10px;               /* 控制输入框和按钮之间的间距 */
+  height: 100px;           /* 设置容器的高度，确保内容可以垂直居中 */
+}
+
+
+/* 使按钮居中的容器 */
+.item6 {
+  display: flex;            /* 使用 flexbox */
+  justify-content: center;  /* 水平居中 */
+  align-items: center;      /* 垂直居中 */
+  height: 50px;            /* 确保容器有足够的高度来居中 */
+  padding-left: 60px;
+}
+
+/* 头像样式 */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  align-self: flex-start;
+}
+
+/* 消息内容 */
+.message-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.word {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  pointer-events: none; /* 防止文字遮挡图片的点击事件 */
+}
+
+#clear img {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px; /* 调整图标与文字的间距 */
+}
+
+
+
+/* 输入框 */
+.input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  width: 900px; /* 设置输入框最大宽度 */
+  border-radius: 25px; /* 圆角效果 */
+  overflow: hidden;
+  border: 1px solid #ddd; /* 输入框边框颜色 */
+  background-color: #f9f9f9; /* 背景色 */
+}
+
+#user-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 25px 0 0 25px; /* 左侧圆角 */
+  background-color: transparent;
+}
+
+#send-button {
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 25px 25px 0; /* 右侧圆角 */
+  transition: background-color 0.3s ease;
+}
+
+#send-button img {
+  width: 20px;
+  height: 20px;
+}
+
+
+.create-new-talk {
+  width: 50px; /* 调整图片宽度 */
+  height: auto; /* 自动调整高度以保持比例 */
+}

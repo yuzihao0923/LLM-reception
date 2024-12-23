@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 800px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_example.css?t=9">
+</head>
+<body>
+
+    <div class="grid-container" style="height: 800px;padding-top: 0px;"">
+        <div class="item1" style="padding-bottom: 100px;"></div>
+
+        <div class="item2" style="padding-top: 35px;padding-left: 35px;">
+            <div class="便民专题">
+                <ul style="padding-left: 0px;padding-top: 25px;">
+                    <li style="position: relative; display: inline-block;"><img src="/resource/住房服务.png" style="width: 160px;height: 65px;">
+                        <span class="word">住房服务</span>
+                    </li>
+                    <li style="position: relative; display: inline-block;"><img src="/resource/教育服务.png" style="width: 160px;height: 65px;">
+                        <span class="word">教育服务</span>
+                    </li>
+                    <li style="position: relative; display: inline-block;"><img src="/resource/就业创业.png" style="width: 160px;height: 65px;">
+                        <span class="word">就业创业</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="便企服务" style="padding-left: 0px;padding-top: 75px;">
+                <ul style="padding-left: 0px;">
+                    <li style="position: relative; display: inline-block;"><img src="/resource/法律服务.png" style="width: 160px;height: 65px;">
+                        <span class="word">法律服务</span>
+                    </li>
+                    <li style="position: relative; display: inline-block;"><img src="/resource/税收优惠.png" style="width: 160px;height: 65px;">
+                        <span class="word">税收优惠</span>
+                    </li>
+                    <li style="position: relative; display: inline-block;"><img src="/resource/证件办理.png" style="width: 160px;height: 65px;">
+                        <span class="word">证件办理</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="item3">
+        </div>
+
+        <div class="item4" style="padding-left: 180px;padding-right: 30px;">
+            <div id="chat-box" class="chat-box"></div>
+        </div>
+
+        <div class="item5" style="padding-left: 170px;">
+            <div class="input-container" style="height: 35px;">
+                <input type="text" id="user-input" placeholder="请输入你的问题..." />
+                <button id="send-button" onclick="sendQuestion()">
+                    <img src="../resource/发送.png" alt="发送" />
+                </button>
+            </div>
+        </div>
+
+        <div class="item6">
+            <div>
+                <button id="clear" style="display: flex; align-items: center;"><img src="../resource/清除记录.png" class="icon-clear">清除记录</button>
+            </div>
+        </div>
+
+        <div class="item7">
+            <div class="问答知识库">
+                <img src="/resource/政务知识库.png" style="width: 125px;padding-top: 100px;padding-left: 100px;">
+            </div>
+
+            <div class="对话记录">
+                <ul id="对话列表" style="padding-top: 125px;">
+                    <li><img src="/resource/对话记录.png" style="width: 250px; height: 30px;"></li>
+                    <li><img src="/resource/对话记录.png" style="width: 250px; height: 30px;"></li>
+                    <li><img src="/resource/对话记录.png" style="width: 250px; height: 30px;"></li>
+                </ul>
+            </div>
+            
+            <div style="padding-left: 230px;padding-top: 20px;"> 
+                <img src="../resource/创建新对话.png" class="create-new-talk">
+            </div>
+        </div>
+    </div>
+    
+    <script src="script_example.js?t=4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</body>
+</html>
